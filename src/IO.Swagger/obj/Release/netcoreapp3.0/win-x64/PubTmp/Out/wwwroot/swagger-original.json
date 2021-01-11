@@ -1,0 +1,57 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API description in Markdown.",
+    "version" : "1.0.0",
+    "title" : "Sample API"
+  },
+  "host" : "10.0.0.20",
+  "basePath": "/v1",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/getIps" : {
+      "get" : {
+        "operationId" : "getIps",
+        "produces" : [ "application/text" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string",
+                "example" : ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{ip}" : {
+      "get" : {
+        "summary" : "Gets a user by ID.",
+        "parameters" : [ {
+          "name" : "ip",
+          "in" : "path",
+          "description" : "Numeric ID of the user to get.",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string",
+                "example" : ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}
